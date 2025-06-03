@@ -1,0 +1,5 @@
+charts/
+logs/
+__pycache__/
+*.pyc
+.streamlit/
