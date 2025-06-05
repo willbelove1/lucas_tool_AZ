@@ -151,7 +151,7 @@ def get_gemini_recommendation(latest_data: pd.Series, fib_level: str, support: f
         retries = Retry(total=3, backoff_factor=1, status_forcelist=[429, 500, 502, 503, 504])
         session.mount("https://", HTTPAdapter(max_retries=retries))
         response = session.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key={GEMINI_API_KEY}",
+            f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key={GEMINI_API_KEY}",
             json=payload, headers=headers, timeout=5
         )
         response.raise_for_status()
